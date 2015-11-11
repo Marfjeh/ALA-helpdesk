@@ -1,8 +1,12 @@
 # ALA-helpdesk
-A school project.
+(warning dutch only)A school project.
 
-A javascript driven SupportCenter with some php magic.
+Een javascript helpdesk met wat php.
 
-This project is written in php, uses some javascript and uses MarfFrameWork. Notice: some of the code is in dutch, but most of the code is english. 
+Het maakt gebruik van onder andere:
+* MarfFrameWork github: https://github.com/Marfjeh/MarfFrameWork
+* MarfPhpTemplate github: n.v.t
+* alertify.js github: https://github.com/alertifyjs/alertify.js
+* Jquery github: https://github.com/jquery/jquery
 
-LICENCE:  GNU GENERAL PUBLIC LICENSE 2.0
+LICENTIE:  GNU GENERAL PUBLIC LICENSE 2.0
