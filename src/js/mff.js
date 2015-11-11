@@ -88,7 +88,7 @@ function pushsupport()
 
 // **** PUSH API END ****
 
-/* Disabled for "securty risks"...
+
 function myIP()  { //Get a Ip with Xjax.
     if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
     else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
@@ -104,7 +104,6 @@ function myIP()  { //Get a Ip with Xjax.
     }
     return false;
 }
-*/
 
 // SmoothScrolling, this works with a element that has a ID like: <p id="one">. To scroll to that element you can use a hyperlink such as <a href="#one">Scroll to one</a> This needs jqeury!
 $(function() {
@@ -126,7 +125,7 @@ function footer() { //This adds a footer that is always visible. use ID=footer. 
 
     $(window).bind("load", function () {
 
-        var footerHeight = 0,
+        var footerHeight = 100,
             footerTop = 0,
             $footer = $("#footer");
 
@@ -157,6 +156,4 @@ function footer() { //This adds a footer that is always visible. use ID=footer. 
 }
 
 function playmusic(file, soort) // playmusic("music.mp3", "mp3"); this is not done yet.
-{
-	undefined;
-}
+{}
