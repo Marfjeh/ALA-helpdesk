@@ -1,13 +1,14 @@
 <?php 
 //start int
 include("../inc/conf.php");
-$pagina = "home"; // Pagina naam
+$pagina = "HelpDesk"; // Pagina naam
 require_once("inc/head.php");
 require_once("inc/menu.php");
 // end int
 ?>
-<script>vragen();</script>
+<script>//vragen();</script>
 <div id="content">
-
+	<h1>Projectnaam - HelpDesk</h1>
+	
 </div>
 <?php require_once("inc/footer.php"); ?>

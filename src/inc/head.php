@@ -12,6 +12,7 @@
 		<script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.5/dist/js/alertify.js"></script>
 		<script src="js/helpdesk.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/alertify.css" id="alertifyCSS">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script>footer();
 		</script>
 	</head>

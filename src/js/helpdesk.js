@@ -12,12 +12,18 @@ var tvprobleem = false;
 
 
 
-function vragen() // LETOP: De vragen zijn ongekeert. het begint van onder naar boven!
+function vragen()
 {
-    //alertify.prompt(meldingtekst, EVENT OK, EVENT CANCEL)
+    klantnaam = prompt("Wat is uw naam?");
+    while (klantnaam == "" || klantnaam == null)
+    {
+        klantnaam = prompt("Sorry, Wat is uw naam?");
+    }
+    alertify.success("Goededag, " + klantnaam);
+}
+function vragenpart2()
+{
 
-    alertify.prompt("Wat is de datum?", function (val) { datum = val; printbegin();}); //Vraag 2
-    alertify.prompt("Uw naam?", function (val) { klantnaam = val; }); // Vraag 1
 }
 
 function internetproblemen()
@@ -33,11 +39,4 @@ function telefoonproblemen()
 function tvproblemen()
 {
 	
-}
-
-function printbegin() //Dit is voor de naam, datum, datum gebeurtenis, te printen op scherm.
-{
-    document.write("" + "Gegevens klant: <br> " +
-        "Naam: " + klantnaam +
-        "<br>Datum van gebeurtenis: " + datum);
 }

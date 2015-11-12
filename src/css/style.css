@@ -1,0 +1,28 @@
+body {
+    margin: 0px auto;
+    font-family: Verdana, Arial;
+}
+#menu{
+    width: 100%;
+    background: deepskyblue;
+    height: 35px;
+    font-size: 19px;
+    /* float: center; */
+}
+#menu a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+#menu a:focus,
+#menu a:hover
+{
+    padding: 18px;
+    background: red;
+    border: solid 2px darkred;
+
+}
+
+#content {
+    text-align: center;
+}
