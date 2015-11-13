@@ -4,10 +4,9 @@ body {
 }
 #menu{
     width: 100%;
-    background: deepskyblue;
+    background: 343434;
     height: 35px;
     font-size: 19px;
-    /* float: center; */
 }
 #menu a{
     text-decoration: none;
