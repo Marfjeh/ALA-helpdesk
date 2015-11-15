@@ -4,7 +4,7 @@ body {
 }
 #menu{
     width: 100%;
-    background: 343434;
+    background: #343434;
     height: 35px;
     font-size: 19px;
 }
@@ -16,12 +16,33 @@ body {
 #menu a:focus,
 #menu a:hover
 {
-    padding: 18px;
-    background: red;
-    border: solid 2px darkred;
 
 }
-
+button {
+    padding: 5px;
+    background: green;
+    border: solid 1px darkgreen;
+    border-radius: 5px;
+    color:white;
+}
+button:hover{
+    padding: 5px;
+    background: lawngreen;
+    border: solid 1px darkgreen;
+    border-radius: 5px;
+    color:white;
+}
 #content {
     text-align: center;
+}
+
+#footer {
+    width: 100%;
+    background: #343434;
+    height: 35px;
+    font-size: 19px;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    text-align: center; /* En niet float: center; */
 }

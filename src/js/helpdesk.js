@@ -20,6 +20,12 @@ function vragen()
         klantnaam = prompt("Sorry, Wat is uw naam?");
     }
     alertify.success("Goededag, " + klantnaam);
+
+    datum = prompt("Wat is de datum van de gebeurtenis? u kunt ook vandaag typen.");
+    while (datum == "" || datum == null)
+    {
+        datum = prompt("Wat is de datum van de gebeurtenis? u kunt ook vandaag typen.");
+    }
 }
 function vragenpart2()
 {
