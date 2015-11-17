@@ -3,16 +3,19 @@
 $pagina = "HelpDesk"; // Pagina naam
 include("inc/conf.php");
 require_once("inc/head.php");
-require_once("inc/menu.php");
 $randomid = rand(1, 999999);
+echo("<script> var randomid = $randomid</script>");
+require_once("inc/menu.php");
 // end int
 ?>
 <script>footer();</script>
-<div id="content">
+<div id="pagina">
+    <div id="content">
     <br><br><br><br><br><br>
 	<h1>MarfProjects - <?php echo($pagina);?></h1>
-    <p>Uw Ticket nummer is: <span id="randomid"><?php echo($randomid); ?></span></p>
-    <button onclick="vragen();">Start de vragen</button>
-
+    <p>We zijn hier om u te helpen!</p>
+    <p><small>Uw Ticket nummer is: <span id="randomid"><?php echo($randomid); ?></span></small></p>
+    <button onclick="vragen();">Begin de vragen</button>
+    </div>
 </div>
 <?php require_once("inc/footer.php"); ?>

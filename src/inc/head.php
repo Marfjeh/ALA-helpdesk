@@ -13,6 +13,7 @@
 		<script src="js/helpdesk.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/alertify.css" id="alertifyCSS">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 		<script>footer();
 		</script>
 	</head>

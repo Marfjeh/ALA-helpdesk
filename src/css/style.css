@@ -3,6 +3,7 @@ body {
     font-family: Verdana, Arial;
     background-image: url(../img/header.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 100%;
     -webkit-font-smoothing: antialiased;
 }
@@ -11,6 +12,14 @@ body {
     background: #343434;
     height: 35px;
     font-size: 19px;
+    text-decoration: none;
+    color: white;
+    padding-top: 10px;
+}
+#menu span
+{
+    padding-left: 50px;
+    padding-right: 10px;
 }
 #menu a{
     text-decoration: none;
@@ -22,7 +31,7 @@ body {
 {
 
 }
-#content
+#pagina
 {
     text-align: center;
     color: white;
@@ -47,12 +56,20 @@ body {
 
 #footer {
     width: 100%;
-    background: #343434;
+    background: rgba(52, 52, 52, 0.8);
     font-size: 9px;
     position: absolute;
     bottom: 0px;
     color: white;
     text-align: center;
+}
+
+#resultaat
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 3px 3px 3px 3px;
+    background: rgba(255,255,255, 0.6);
 }
 
 /* Buttons */

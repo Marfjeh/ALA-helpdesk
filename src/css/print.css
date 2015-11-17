@@ -1,0 +1,32 @@
+body {
+    font-family: Verdana, Arial;
+}
+#menu{
+    display: none;
+    visibility: hidden;
+}
+#pagina
+{
+    visibility: visible;
+}
+#content
+{
+    display: none;
+    visibility: hidden;
+}
+
+#footer {
+    display: none;
+    visibility: hidden;
+}
+
+#resultaat
+{
+    visibility: visible;
+}
+
+button
+{
+    display: none;
+    visibility: hidden;
+}
