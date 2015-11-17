@@ -9,6 +9,7 @@ $randomid = rand(1, 999999);
 ?>
 <script>footer();</script>
 <div id="content">
+    <br><br><br><br><br><br>
 	<h1>MarfProjects - <?php echo($pagina);?></h1>
     <p>Uw Ticket nummer is: <span id="randomid"><?php echo($randomid); ?></span></p>
     <button onclick="vragen();">Start de vragen</button>

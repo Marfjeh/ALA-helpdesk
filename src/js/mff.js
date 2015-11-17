@@ -1,11 +1,11 @@
 /* 
 MarfFrameWork 1.2
-This is open-source, 
+This is a open-source project,
 Offical github: https://github.com/Marfjeh/MarfFrameWork
 LICENSE: GNU GENERAL PUBLIC LICENSE Version 2
  */
-var mjversie = "1.2_2";
-var mjdate = "9-11-2015";
+var mjversie = "1.2_3";
+var mjdate = "17-11-2015";
 
 // useragent Dectector
 var useragent = null;
@@ -154,6 +154,23 @@ function footer() { //This adds a footer that is always visible. use ID=footer. 
 
     });
 }
-
 function playmusic(file, soort) // playmusic("music.mp3", "mp3"); this is not done yet.
-{}
+{ }
+
+function datenow(format)
+{
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return (day + format + month + format + year);
+}
+
+function timenow(format)
+{
+    var currentDate = new Date();
+    var hour = currentDate.getHours();
+    var mins = currentDate.getMinutes();
+    var sec = currentDate.getSeconds();
+    return (hour + format + mins + format + sec);
+}
