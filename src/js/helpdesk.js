@@ -1,5 +1,5 @@
 // Marvin Ferwerda
-// LETOP: Deze code vereist MarfFrameWork!
+// LETOP: Deze code vereist MarfFrameWork versie 1.3 of later!
 
 // int vars
 var klantnaam;
@@ -70,11 +70,11 @@ function vragen()
     }
     else
     {
-        addtoelementln("resultaat", "Klant heeft geen problemen met de Tv");
+        addtoelementln("resultaat", "* Klant heeft geen problemen met de Tv");
     }
     if(tvprobleem == false && internetprobleem == false && telefoonprobleem == false)
     {
-        addtoelementln("resultaat", "Klant heeft geen problemen.")
+        addtoelementln("resultaat", "* Klant heeft geen problemen.")
         end(0);
     }
 
@@ -110,7 +110,7 @@ function end(endcode)
 {
     if (endcode == 0) //succes.
     {
-        throw new Error("Succes. script is gestopt.");
+        throw new Error("Succes. Maar script is gestopt.");
     }
     else if (endcode == 1) //Afgebroken
     {
