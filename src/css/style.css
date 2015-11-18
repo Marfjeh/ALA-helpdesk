@@ -1,11 +1,9 @@
 body {
     margin: 0px auto;
     font-family: Verdana, Arial;
-    background-image: url(../img/header.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: 100%;
     -webkit-font-smoothing: antialiased;
+    background:gray;
 }
 #menu{
     width: 100%;
@@ -66,9 +64,8 @@ body {
 
 #resultaat
 {
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 3px 3px 3px 3px;
+    margin-left: 5%;
+    margin-right: 5%;
     background: rgba(255,255,255, 0.6);
 }
 
