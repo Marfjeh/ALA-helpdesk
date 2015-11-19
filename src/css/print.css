@@ -1,32 +1,39 @@
 body {
     font-family: Verdana, Arial;
+    color:black;
 }
 #menu{
     display: none;
     visibility: hidden;
+    color:black;
 }
 #pagina
 {
     visibility: visible;
+    color:black;
 }
 #content
 {
     display: none;
     visibility: hidden;
+    color:black;
 }
 
 #footer {
     display: none;
     visibility: hidden;
+    color:black;
 }
 
 #resultaat
 {
     visibility: visible;
+    color:black;
 }
 
 button
 {
     display: none;
     visibility: hidden;
+    color:black;
 }

@@ -12,12 +12,6 @@ var tvprobleem = false;
 function vragen()
 {
     var hoofddiv = document.getElementById('pagina');
-    if (mjactive == undefined)
-    {
-        alert("Er is een fitale fout opgetreden. probeer de pagina te herladen, of probeer later opnieuw als dit blijft voor doen. Error code: MarfFrameWork_NOT_FOUND");
-        end(2); //MarfFrameWork niet gevonden stop de Script.
-    }
-
     addtoelement("pagina","<div id='resultaat'><h2>Rapport</h2></div>");
 
     klantnaam = prompt("Wat is uw naam?");
@@ -54,6 +48,7 @@ function vragen()
     {
         addtoelementln("resultaat", "* Klant heeft geen problemen met het internet");
     }
+
     telefoonprobleem = confirm("heeft u een klacht over bellen");
     if(telefoonprobleem == true)
     {
@@ -63,6 +58,7 @@ function vragen()
     {
         addtoelementln("resultaat", "* Klant heeft geen problemen met bellen");
     }
+
     tvprobleem = confirm("heeft u problemen met de tv?");
     if(tvprobleem == true)
     {
@@ -72,9 +68,10 @@ function vragen()
     {
         addtoelementln("resultaat", "* Klant heeft geen problemen met de Tv");
     }
+
     if(tvprobleem == false && internetprobleem == false && telefoonprobleem == false)
     {
-        addtoelementln("resultaat", "* Klant heeft geen problemen.")
+        addtoelementln("resultaat", "* Klant heeft geen problemen.");
         end(0);
     }
 
@@ -124,8 +121,12 @@ function end(endcode)
     {
         throw new Error("MarfFrameWork is niet gevonden/actief/geladen. De script kan niet verder gaan.")
     }
-    else if (endcode == null || endcode >= 3)
+    else if (endcode == null)
     {
         throw new Error("Er is wat fout gegaan!");
+    }
+    else if (endcode >= 3)
+    {
+        throw new Error("Er is een ombekende fout opgetreden.")
     }
 }
