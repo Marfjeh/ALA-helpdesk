@@ -11,6 +11,7 @@ body {
 {
     visibility: visible;
     color:black;
+    text-align: left;
 }
 #content
 {

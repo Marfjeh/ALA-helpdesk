@@ -9,10 +9,13 @@ var internetprobleem = false;
 var telefoonprobleem = false;
 var tvprobleem = false;
 
+
 function vragen()
 {
+    var ID = document.getElementById('randomid').innerHTML;
     var hoofddiv = document.getElementById('pagina');
     addtoelement("pagina","<div id='resultaat'><h2>Rapport</h2></div>");
+    addtoelementln("resultaat", "Ticket ID: " + ID);
 
     klantnaam = prompt("Wat is uw naam?");
     while (klantnaam == "")
@@ -89,17 +92,53 @@ function internetproblemen()
     if (reageertsnel == true)
     { addtoelementln("resultaat", "* Pagina laad snel"); }
     else
-    { addtoelementln("resultaat", "* Pagina laad traag"); }
+    { addtoelementln("resultaat", "* Pagina laad traag of niet"); }
 
 }
 
 function telefoonproblemen()
 {
+    var kiestoon = confirm("Hoort uw een kiestoon?");
+    if (kiestoon == true)
+    {
+        addtoelementln("resultaat", "* Klant hoort een kiestoon.");
+        tvproblemen();
+    }
+    else
+    {addtoelementln("resultaat", "* Klant hoort geen kiestoon.");}
 
+    var uzelfbellen = confirm("Kunt u uzelf bellen op bijvoorbeeld een mobiele telefoon?");
+    if (uzelfbellen == true)
+    {addtoelementln("resultaat", "* Klant kan zichzelf bellen");}
+    else
+    {addtoelementln("resultaat", "* Klant kan niet zichzelf bellen");}
+
+    var mobielbellen = confirm("Kunt u met uw mobiel bellen over de klacht van de telefoon?");
+    if (mobielbellen == true)
+    { addtoelementln("resultaat", "* Klant kan bellen met zijn/haar mobiel over de klacht."); }
+    else
+    { addtoelementln("resultaat", "* Klant kan niet bellen met zijn/haar mobiel over de klacht."); }
 }
 
 function tvproblemen()
 {
+    var aantaltv = prompt ("Hoevaal televisies zijn er aangesloten?");
+    while (aantaltv == "") { aantaltv = prompt ("Hoevaal televisies zijn er aangesloten?"); }
+    if (aantaltv == null) { end(0);}
+    else
+    { addtoelementln("resultaat", "* Klant heeft: " + aantaltv + " Televiesie(s)."); }
+
+    var splitter = confirm("is uw splitter goed aangesloten?");
+    if (splitter == true)
+    { addtoelementln("resultaat", "* Klant heeft de splitter goed aangesloten."); }
+    else
+    { addtoelement("resultaat", "* Klant heeft de splitter niet goed aangesloten, of heeft geen splitter."); }
+
+    var setupbox = confirm("Is uw settupbox goed aangesloten?");
+    if (setupbox == true)
+    {
+        
+    }
 
 }
 
@@ -107,7 +146,7 @@ function end(endcode)
 {
     if (endcode == 0) //succes.
     {
-        throw new Error("Succes. Maar script is gestopt.");
+        throw new Error("Succes. Maar werd geroepen om de script te stoppen.");
     }
     else if (endcode == 1) //Afgebroken
     {
