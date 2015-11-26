@@ -97,26 +97,6 @@ function pushsupport()
 
 // **** PUSH API END ****
 
-
-function myIP()  { //Get a Ip with xml.
-
-    log("This feature is disabled for security reasons by browsers, external xmlhttp.send is marked unsafe by browsers.");
-    return false;
-   /* if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
-    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-    xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
-    xmlhttp.send();
-
-    hostipInfo = xmlhttp.responseText.split("\n");
-
-    for (i=0; hostipInfo.length >= i; i++) {
-        ipAddress = hostipInfo[i].split(":");
-        if ( ipAddress[0] == "IP" ) return ipAddress[1];
-    }
-    return false;*/
-}
-
 // SmoothScrolling, this works with a element that has a ID like: <p id="one">. To scroll to that element you can use a hyperlink such as <a href="#one">Scroll to one</a> This needs jqeury!
 $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
@@ -216,19 +196,19 @@ function addtoelementln(div, text) // Add to ID Element. and keeping the existin
 
 }
 
-function settoelement(div, text)
+function settoelement(div, text) // set text to a element and removing the old one.
 {
     var divvar = document.getElementById(div);
     divvar.innerHTML = text;
 }
 
-function clearelement(div) // clear te element.
+function clearelement(div) // clear the element.
 {
     var divvar = document.getElementById(div);
     divvar.innerHTML = "";
 }
 
-function delelement(div)
+function delelement(div) // delete the element completely
 {
     var divvar = document.getElementById(div);
     divvar.outerHTML = "";

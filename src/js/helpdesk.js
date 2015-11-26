@@ -23,6 +23,8 @@ function vragen()
         klantnaam = prompt("Sorry, Wat is uw naam?");
     }
     if ( klantnaam == null ) { end(1) }
+    else if (klantnaam == "debug")
+    { alertify.log("Debug mode activated!"); end(0);}
     addtoelementln("resultaat","Klantnaam: " + klantnaam );
 
 
@@ -77,7 +79,7 @@ function vragen()
         addtoelementln("resultaat", "* Klant heeft geen problemen.");
         end(0);
     }
-
+    addtoelementln("resultaat", "Rapport Vontooid!"); //TODO: Knop voor restart. en printen
 }
 
 function internetproblemen()
@@ -132,14 +134,19 @@ function tvproblemen()
     if (splitter == true)
     { addtoelementln("resultaat", "* Klant heeft de splitter goed aangesloten."); }
     else
-    { addtoelement("resultaat", "* Klant heeft de splitter niet goed aangesloten, of heeft geen splitter."); }
+    { addtoelementln("resultaat", "* Klant heeft de splitter niet goed aangesloten, of heeft geen splitter."); }
 
     var setupbox = confirm("Is uw settupbox goed aangesloten?");
     if (setupbox == true)
-    {
-        
-    }
+    { addtoelementln("resultaat", "* Klant heeft Setupbox goed aangesloten");}
+    else
+    { addtoelementln("resultaat", "* Klant heeft settupbox niet goed aangesloten of heeft er geen 1");}
 
+    var zenders = confirm("Worden de zenders gevonden?");
+    if (zenders == true)
+    { addtoelementln("resultaat", "* Zenders worden gevonden"); }
+    else
+    { addtoelementln("resultaat", "* Zenders worden niet gevonden."); }
 }
 
 function end(endcode)

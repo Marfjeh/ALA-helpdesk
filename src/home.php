@@ -9,6 +9,7 @@ echo("<script> var randomid = $randomid</script>");
     <p>We zijn hier om u te helpen!</p>
     <p><small>Uw Ticket nummer is: <span id="randomid"><?php echo($randomid); ?></span></small></p>
     <button onclick="vragen();">start de formulier</button>
+        <br><br>
     </div>
 
 </div>

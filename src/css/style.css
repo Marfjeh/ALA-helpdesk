@@ -3,7 +3,7 @@ body {
     font-family: Verdana, Arial;
     background-size: 100%;
     -webkit-font-smoothing: antialiased;
-    background:gray;
+    background: linear-gradient(to right, rgba(0,20,64,1) 0%,rgba(0,32,102,1) 100%);
 }
 #menu{
     width: 100%;
@@ -13,12 +13,11 @@ body {
     text-decoration: none;
     color: white;
     padding-top: 10px;
-    box-shadow:         0px 10px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 10px 10px 0px rgba(0, 0, 0, 0.30);
 }
 #menu span
 {
     padding-left: 50px;
-    padding-right: 50px;
 }
 #linksklein
 {
@@ -27,9 +26,11 @@ body {
     font-size: 12px;
 }
 #menu a{
+    padding-top: 5px;
+    padding-left: 10px;
     text-decoration: none;
     color: white;
-    padding: 20px;
+    font-size: 12px;
 }
 #menu a:focus,
 #menu a:hover
@@ -74,7 +75,10 @@ body {
 {
     background: rgba(255,255,255, 0.6);
     text-align: left;
-    padding-left: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: solid 1px #4d4d4d;
+    padding-left: 10px;
 }
 
 /* Buttons */
