@@ -6,7 +6,7 @@
  	   	<meta name="description" content="HelpDesk">
   	  	<meta name="keywords" content="helpDesk, help, ala, idcollege, MarfProjects">
   	  	<meta name="author" content="Marvin Ferwerda">
-		<title> MarfProjects - <?php echo($paginanaam); ?> </title>
+		<title> SweetNetwork - <?php echo($paginanaam); ?> </title>
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/mff.js">//MarfFrameWork</script>
 		<script src="js/alertify.js"></script>
@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 		<script>footer();</script>
+
 	</head>
-	<body id="test">
+	<body id="page">
 	

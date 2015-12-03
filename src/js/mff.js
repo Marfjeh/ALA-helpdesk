@@ -159,7 +159,7 @@ function playmusic(file, type) // playmusic("music.mp3", "mp3"); This needs jque
 
 function datenow(format) // Returns Day Month year. Syntax: datenow("-"); returns as for example: 1-1-2015 defaults: "-"
 {
-    if (format == null)
+    if (format == null) //fallback to default when there is no value.
     {
         format = "-";
     }
@@ -172,7 +172,7 @@ function datenow(format) // Returns Day Month year. Syntax: datenow("-"); return
 
 function timenow(format) // Returns Hour minute and seconds. Syntax: timenow(":"); returns as for example: 12:00:00 defaults: ":"
 {
-    if (format == null)
+    if (format == null) //fallback to default when there is no value.
     {
         format = ":";
     }
@@ -213,4 +213,9 @@ function delelement(div) // delete the element completely
     var divvar = document.getElementById(div);
     divvar.outerHTML = "";
     delete divvar;
+}
+
+function makeiframe(id, url, height, width)
+{
+    addtoelementln(id,"<iframe src='" + url + "' scrolling='no' frameborder='0' marginheight='0px' marginwidth='0px' height='" + height +"' width='" + width + "'></iframe>");
 }

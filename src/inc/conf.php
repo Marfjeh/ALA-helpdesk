@@ -1,3 +1,3 @@
 <?php
-$geturl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$geturl = "http://$_SERVER[HTTP_HOST]";
 $version = 1.2;

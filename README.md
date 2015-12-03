@@ -1,3 +1,7 @@
+#this project is finished. and the project is been discontinued. you can use this for learning, or for other idcollege students.
+
+
+
 # ALA-helpdesk
 (warning dutch only)A school project.
 

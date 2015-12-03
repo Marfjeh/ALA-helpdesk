@@ -8,10 +8,26 @@ var modem;
 var internetprobleem = false;
 var telefoonprobleem = false;
 var tvprobleem = false;
+var traagladen = false;
 
+var probleemoplossing = new Array ();
+probleemoplossing[0] = "Schakel de modem uit. en wacht minimaal 10 seconden om hem opnieuw in te schakelen. Zo dat dit niet helpt, kunnen wij een monteur sturen.<br>";
+probleemoplossing[1] = "Uw problemen zijn:\nInternet probleem: " + (internetprobleem ? "Ja" : "Nee") + "\nProblemen met de telefoon: " + (telefoonprobleem ? "Ja" : "Nee") + "\nProblemen met de Tv: " + (tvprobleem ? "Ja" : "Nee");
+probleemoplossing[2] = "Uw paginas laden traag. dit kan vaak komen dat er veel programmas op de achtergrond draait. probeer ze af te sluiten. probeer zoveel mogelijk apperaten aftesluiten en kijken waar het probleem zit. zo dat uw het probleem gevonden hebt kunt u kijken wat er aan gedaan moeten worden. weet u dat niet? dan kunnen we gratis een monteur laten komen.<br>";
+probleemoplossing[3] = "Zorg dat de splitter goed aangesloten zit, en reset uw setupbox, en wacht minimaal 10 seconden met weer aan zetten.<br>";
 
-function vragen()
+function vragen() // eerste vragen
 {
+    try {
+        var resdiv = document.getElementById("resultaat");
+        resdiv.outerHTML = "";
+        delete resdiv;
+    }
+    catch(e)
+    {
+        log("Error: " + e);
+    }
+
     var ID = document.getElementById('randomid').innerHTML;
     var hoofddiv = document.getElementById('pagina');
     addtoelement("pagina","<div id='resultaat'><h2>Rapport</h2></div>");
@@ -25,16 +41,16 @@ function vragen()
     if ( klantnaam == null ) { end(1) }
     else if (klantnaam == "debug")
     { alertify.log("Debug mode activated!"); end(0);}
-    addtoelementln("resultaat","Klantnaam: " + klantnaam );
+    addtoelementln("resultaat","Klant naam: " + klantnaam );
 
 
-    datum = prompt("Wat is de datum van de gebeurtenis?", datenow("-") + " " + timenow(":"));
+    datum = prompt("Wat is de datum?", datenow("-") + " " + timenow(":"));
     while (datum == "")
     {
-        datum = prompt("Wat is de datum van de gebeurtenis?", datenow("-") + " " + timenow(":"));
+        datum = prompt("Wat is de datum?", datenow("-") + " " + timenow(":"));
     }
     if (datum == null) { end(1) }
-    addtoelementln("resultaat", "Datum van gebeurtenis: " + datum);
+    addtoelementln("resultaat", "Datum: " + datum);
 
     modem = prompt("Wat is het merk en type van uw modem?");
     while (modem == "")
@@ -44,6 +60,7 @@ function vragen()
     if (modem == null) { end(1) }
     addtoelementln("resultaat", "Modem van klant: " + modem);
 
+    addtoelementln("resultaat", " ---- Internet ---- <br>");
     internetprobleem = confirm("Heeft u een klacht over ons product internet?");
     if (internetprobleem == true)
     {
@@ -54,6 +71,7 @@ function vragen()
         addtoelementln("resultaat", "* Klant heeft geen problemen met het internet");
     }
 
+    addtoelementln("resultaat", " ---- Telefoon ---- <br>");
     telefoonprobleem = confirm("heeft u een klacht over bellen");
     if(telefoonprobleem == true)
     {
@@ -64,6 +82,7 @@ function vragen()
         addtoelementln("resultaat", "* Klant heeft geen problemen met bellen");
     }
 
+    addtoelementln("resultaat", " ---- Tv ---- <br> ");
     tvprobleem = confirm("heeft u problemen met de tv?");
     if(tvprobleem == true)
     {
@@ -73,16 +92,26 @@ function vragen()
     {
         addtoelementln("resultaat", "* Klant heeft geen problemen met de Tv");
     }
-
-    if(tvprobleem == false && internetprobleem == false && telefoonprobleem == false)
+    addtoelementln("resultaat", " ---- eind ---- <br>");
+    addtoelementln("resultaat", "Probleem oplosser:<br>")
+    if(tvprobleem == true)
     {
-        addtoelementln("resultaat", "* Klant heeft geen problemen.");
-        end(0);
+        addtoelementln("resultaat", probleemoplossing[3]);
     }
-    addtoelementln("resultaat", "Rapport Vontooid!"); //TODO: Knop voor restart. en printen
+    if(internetprobleem == true || telefoonprobleem == true)
+    {
+        addtoelementln("resultaat", probleemoplossing[0]);
+    }
+    if (traagladen == true)
+    {
+        addtoelementln("resultaat", probleemoplossing[2])
+    }
+    addtoelementln("resultaat", " -- Rapport Voltooid! -- ");
+    addtoelementln("resultaat", "Internet Probleem: " + internetprobleem + "<br>Telefoon probleem: " + telefoonprobleem + "<br>Tv problemen: " + tvprobleem);
+    addtoelementln("resultaat", "<span style='text-align: center;'><button onclick='restart();'>Opnieuw</button> - <button onclick='window.print();'>UitPrinten</button></span>");
 }
 
-function internetproblemen()
+function internetproblemen() // internet
 {
     var nunlwerkt = confirm("Kunt u browsen naar www.nu.nl?");
     if (nunlwerkt == true)
@@ -90,21 +119,23 @@ function internetproblemen()
     else
     { addtoelementln("resultaat", "* Browsen naar www.nu.nl lukt niet."); }
 
-    var reageertsnel = confirm("Reageert de pagina snel na het indrukken van F5 of herlaad knopje?");
+    var reageertsnel = confirm("Reageert de pagina snel na het indrukken van F5 of herlaad knop?");
     if (reageertsnel == true)
     { addtoelementln("resultaat", "* Pagina laad snel"); }
     else
-    { addtoelementln("resultaat", "* Pagina laad traag of niet"); }
+    {
+        traagladen = true;
+        addtoelementln("resultaat", "* Pagina laad traag of niet");
+    }
 
 }
 
-function telefoonproblemen()
+function telefoonproblemen() //telefoon
 {
     var kiestoon = confirm("Hoort uw een kiestoon?");
     if (kiestoon == true)
     {
         addtoelementln("resultaat", "* Klant hoort een kiestoon.");
-        tvproblemen();
     }
     else
     {addtoelementln("resultaat", "* Klant hoort geen kiestoon.");}
@@ -122,9 +153,9 @@ function telefoonproblemen()
     { addtoelementln("resultaat", "* Klant kan niet bellen met zijn/haar mobiel over de klacht."); }
 }
 
-function tvproblemen()
+function tvproblemen() //tv problemen
 {
-    var aantaltv = prompt ("Hoevaal televisies zijn er aangesloten?");
+    var aantaltv = prompt ("Hoeveel televises zijn er aangesloten?");
     while (aantaltv == "") { aantaltv = prompt ("Hoevaal televisies zijn er aangesloten?"); }
     if (aantaltv == null) { end(0);}
     else
@@ -147,6 +178,14 @@ function tvproblemen()
     { addtoelementln("resultaat", "* Zenders worden gevonden"); }
     else
     { addtoelementln("resultaat", "* Zenders worden niet gevonden."); }
+}
+
+function restart()
+{
+    var resdiv = document.getElementById("resultaat");
+    resdiv.outerHTML = "";
+    delete resdiv;
+    vragen();
 }
 
 function end(endcode)
